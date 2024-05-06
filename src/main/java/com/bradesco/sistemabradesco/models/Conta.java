@@ -2,12 +2,17 @@ package com.bradesco.sistemabradesco.models;
 
 import org.springframework.beans.BeanUtils;
 
+<<<<<<< HEAD
 import com.bradesco.sistemabradesco.dto.ContaDTO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+=======
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+>>>>>>> b121324365d04a51c2ac87670268c7d5f97eba57
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -17,7 +22,11 @@ import jakarta.persistence.Table;
 @Table(name = "conta")
 public class Conta {
   @Id
+<<<<<<< HEAD
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+=======
+  //auto incremento
+>>>>>>> b121324365d04a51c2ac87670268c7d5f97eba57
   private int codigo;
 
   @Column(name = "agencia", length = 4, nullable = false)
