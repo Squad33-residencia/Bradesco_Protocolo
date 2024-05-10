@@ -39,6 +39,7 @@ public class SituacaoProtocolo {
   @Column(name = "data_ultima_acao", nullable = false)
   private LocalDate dataUltimaAcao;
 
+  //status protocolo
   
   public SituacaoProtocolo() {
   }

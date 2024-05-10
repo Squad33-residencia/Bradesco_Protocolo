@@ -2,7 +2,6 @@ package com.bradesco.sistemabradesco.models;
 
 import java.time.LocalDate;
 
-import org.hibernate.annotations.GenericGenerator;
 import org.springframework.beans.BeanUtils;
 
 import com.bradesco.sistemabradesco.dto.ProtocoloDTO;
@@ -10,6 +9,7 @@ import com.bradesco.sistemabradesco.dto.ProtocoloDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -21,16 +21,7 @@ import jakarta.persistence.Table;
 @Table(name= "protocolo")
 public class Protocolo { 
   @Id
-  @GeneratedValue(generator = "protocolo_seq")
-    @GenericGenerator(
-        name = "protocolo_seq",
-        strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
-        parameters = {
-            @org.hibernate.annotations.Parameter(name = "sequence_name", value = "protocolo_seq"),
-            @org.hibernate.annotations.Parameter(name = "initial_value", value = "202401"),
-            @org.hibernate.annotations.Parameter(name = "increment_size", value = "1")
-        }
-    )
+  @GeneratedValue(strategy = GenerationType.IDENTITY)//auto_incremento
   private int codigo;
 
   @Column(name = "data_abertura",nullable = false)
@@ -46,8 +37,6 @@ public class Protocolo {
   @JoinColumn(name = "cliente_cpf", referencedColumnName = "cpf")
   private Cliente cliente; //aceita nulo e chave estrageira
 
-  @Column(name = "status_protocolo", length = 20, nullable = false)
-  private String statusProtocolo;
 
   @ManyToOne
   @JoinColumn(name = "canais_codigo", referencedColumnName = "codigo")
@@ -76,6 +65,8 @@ public class Protocolo {
   @Column(name = "procedente")
   private boolean procedente;
 
+  @Column(name = "numero_protocolo",nullable = false)
+  private Long numeroProtocolo;
 
 
   //CONSTRUTOR VAZIO
@@ -128,13 +119,6 @@ public class Protocolo {
     this.cliente = cliente;
   }
 
-  public String getStatusProtocolo() {
-    return statusProtocolo;
-  }
-
-  public void setStatusProtocolo(String statusProtocolo) {
-    this.statusProtocolo = statusProtocolo;
-  }
 
   public Canais getCanal() {
     return canal;
@@ -198,6 +182,19 @@ public class Protocolo {
 
   public void setProcedente(boolean procedente) {
     this.procedente = procedente;
+  }
+
+  
+  public void setDataPrazo(LocalDate dataPrazo) {
+    this.dataPrazo = dataPrazo;
+  }
+
+  public Long getNumeroProtocolo() {
+    return numeroProtocolo;
+  }
+
+  public void setNumeroProtocolo(Long numeroProtocolo) {
+    this.numeroProtocolo = numeroProtocolo;
   }
 
   //METODOS HASHCODE E EQUALS

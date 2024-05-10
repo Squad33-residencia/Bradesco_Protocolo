@@ -1,6 +1,5 @@
 package com.bradesco.sistemabradesco.dto;
 
-<<<<<<< HEAD
 import org.springframework.beans.BeanUtils;
 import com.bradesco.sistemabradesco.models.Cliente;
 import com.bradesco.sistemabradesco.models.Conta;
@@ -60,24 +59,4 @@ public class ContaDTO{
     }
     
 
-=======
-import java.time.LocalDate;
-
-import org.springframework.beans.BeanUtils;
-import org.springframework.context.annotation.Bean;
-
-import com.bradesco.sistemabradesco.models.Canais;
-import com.bradesco.sistemabradesco.models.Cliente;
-import com.bradesco.sistemabradesco.models.Departamento;
-import com.bradesco.sistemabradesco.models.Protocolo;
-import com.bradesco.sistemabradesco.models.TipoProtocolo;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-
-public class contaDTO{
-    private
->>>>>>> b121324365d04a51c2ac87670268c7d5f97eba57
-    
 }

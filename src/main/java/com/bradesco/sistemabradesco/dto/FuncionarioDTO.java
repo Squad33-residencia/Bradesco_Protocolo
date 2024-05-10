@@ -13,6 +13,7 @@ public class FuncionarioDTO {
   private String statusFuncionario;
   private Cargo cargo;
   private Departamento departamento;
+  private String senha;
   
   public FuncionarioDTO(Funcionario funcionario) {
     BeanUtils.copyProperties(funcionario, this);
@@ -68,6 +69,13 @@ public class FuncionarioDTO {
   public void setDepartamento(Departamento departamento) {
     this.departamento = departamento;
   }
-  
+  public String getSenha() {
+    return senha;
+  }
+
+  public void setSenha(String senha) {
+    this.senha = senha;
+  }
+
   
 }

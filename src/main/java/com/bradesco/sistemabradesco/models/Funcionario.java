@@ -1,42 +1,30 @@
 package com.bradesco.sistemabradesco.models;
 
-
-<<<<<<< HEAD
 import org.springframework.beans.BeanUtils;
 
 import com.bradesco.sistemabradesco.dto.FuncionarioDTO;
 
-=======
->>>>>>> b121324365d04a51c2ac87670268c7d5f97eba57
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-<<<<<<< HEAD
 import jakarta.validation.constraints.Email;
-=======
->>>>>>> b121324365d04a51c2ac87670268c7d5f97eba57
+
 
 @Entity
 @Table(name = "funcionario")
 public class Funcionario {
   @Id
-<<<<<<< HEAD
   @Column(name="codigo")
-=======
->>>>>>> b121324365d04a51c2ac87670268c7d5f97eba57
   private String codigo;
 
   @Column(name = "nome", length = 60, nullable = false)
   private String nome;
 
   @Column(name = "email", length = 60, nullable = false)
-<<<<<<< HEAD
   @Email
-=======
->>>>>>> b121324365d04a51c2ac87670268c7d5f97eba57
   private String email;
 
   @Column(name = "status_funcionario", length = 10, nullable = false)
@@ -50,14 +38,15 @@ public class Funcionario {
   @JoinColumn(name = "departamento_codigo", referencedColumnName = "codigo")
   private Departamento departamento;
 
+  @Column(name = "senha", length = 40, nullable = false)
+  private String senha;
+
   public Funcionario() {
   }
-<<<<<<< HEAD
+
   public Funcionario(FuncionarioDTO funcionarioDTO) {
     BeanUtils.copyProperties(funcionarioDTO, this);
   }
-=======
->>>>>>> b121324365d04a51c2ac87670268c7d5f97eba57
   
   //GETTERS AND SETTERS
   public String getCodigo() {
@@ -108,6 +97,16 @@ public class Funcionario {
     this.departamento = departamento;
   }
 
+  public String getSenha() {
+    return senha;
+  }
+
+  public void setSenha(String senha) {
+    this.senha = senha;
+  }
+
+    
+
   //METODOS HASHCODE E EQUALS
   @Override
   public int hashCode() {
@@ -134,5 +133,4 @@ public class Funcionario {
     return true;
   }
 
-    
 }//class

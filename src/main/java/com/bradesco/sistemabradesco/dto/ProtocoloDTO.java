@@ -17,7 +17,6 @@ public class ProtocoloDTO {
   private LocalDate dataPrazo;
   private String descricao;
   private Cliente cliente; //aceita nulo e chave estrageira
-  private String statusProtocolo;
   private Canais canal; //chave estrageira
   private TipoProtocolo tipoProtocolo;//chave estrageira
   private LocalDate dataRecebimentoInicial;
@@ -26,6 +25,7 @@ public class ProtocoloDTO {
   private boolean agilizar;
   private boolean devido;
   private boolean procedente;
+  private Long numeroProtocolo;
 
   //CONSTRUTUOR DE IMPORTAÇÃO DA ENTIDADE PROTOCOLO
   public ProtocoloDTO(Protocolo protocolo){
@@ -75,14 +75,6 @@ public class ProtocoloDTO {
 
   public void setCliente(Cliente cliente) {
     this.cliente = cliente;
-  }
-
-  public String getStatusProtocolo() {
-    return statusProtocolo;
-  }
-
-  public void setStatusProtocolo(String statusProtocolo) {
-    this.statusProtocolo = statusProtocolo;
   }
 
   public Canais getCanal() {
@@ -149,6 +141,13 @@ public class ProtocoloDTO {
     this.procedente = procedente;
   }
 
-  
+
+  public Long getNumeroProtocolo() {
+    return numeroProtocolo;
+  }
+
+  public void setNumeroProtocolo(Long numeroProtocolo) {
+    this.numeroProtocolo = numeroProtocolo;
+  }
 
 }
