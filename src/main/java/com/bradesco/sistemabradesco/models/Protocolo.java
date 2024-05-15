@@ -37,14 +37,13 @@ public class Protocolo {
   @JoinColumn(name = "cliente_cpf", referencedColumnName = "cpf")
   private Cliente cliente; //aceita nulo e chave estrageira
 
-
   @ManyToOne
   @JoinColumn(name = "canais_codigo", referencedColumnName = "codigo")
   private Canais canal; //chave estrageira
 
   @ManyToOne
   @JoinColumn(name = "tipo_protocolo_codigo", referencedColumnName = "codigo")
-  private TipoProtocolo tipoProtocolo;//chave estrageira
+  private TipoProtocolo tipoProtocolo;// chave estrangeira
 
   @Column(name = "data_recebimento_inicial")
   private LocalDate dataRecebimentoInicial;

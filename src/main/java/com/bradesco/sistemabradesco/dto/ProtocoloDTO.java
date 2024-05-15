@@ -12,7 +12,7 @@ import com.bradesco.sistemabradesco.models.TipoProtocolo;
 
 public class ProtocoloDTO {
 
-   private int codigo;
+  private int codigo;
   private LocalDate dataAbertura; // melhor manipulação de data. LocalDate fornece muitas funções q podem ajudar
   private LocalDate dataPrazo;
   private String descricao;

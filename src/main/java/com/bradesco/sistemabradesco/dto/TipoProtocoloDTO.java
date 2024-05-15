@@ -1,7 +1,5 @@
 package com.bradesco.sistemabradesco.dto;
 
-import java.time.LocalDate;
-
 import org.springframework.beans.BeanUtils;
 
 import com.bradesco.sistemabradesco.models.TipoProtocolo;
@@ -10,7 +8,7 @@ public class TipoProtocoloDTO {
   
   private int codigo;
   private String tipo;
-  private LocalDate prazoTratativa;
+  private int prazoTratativa;
   private boolean diasUteis;
 
   public TipoProtocoloDTO(TipoProtocolo tipoProtocolo){
@@ -37,11 +35,11 @@ public class TipoProtocoloDTO {
     this.tipo = tipo;
   }
 
-  public LocalDate getPrazoTratativa() {
+  public int getPrazoTratativa() {
     return prazoTratativa;
   }
 
-  public void setPrazoTratativa(LocalDate prazoTratativa) {
+  public void setPrazoTratativa(int prazoTratativa) {
     this.prazoTratativa = prazoTratativa;
   }
 

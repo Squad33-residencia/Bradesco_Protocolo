@@ -27,8 +27,8 @@ public class ProtocoloController {
 
 
 
-	@GetMapping
-	public List<Protocolo> Resposta(){
+	@GetMapping("/lista")
+	public List<Protocolo> listarProtocolos(){
 		List<Protocolo> Protocolos = repository.findAll();
 		return Protocolos;
 	}
@@ -39,6 +39,11 @@ public class ProtocoloController {
 		return result;
  	}
 
+	@GetMapping(value = "/numero/{numeroProtocolo}")
+	public Protocolo findByNumeroProtocolo(@PathVariable Long numeroProtocolo) {
+		Protocolo result = repository.findByNumeroProtocolo(numeroProtocolo);
+		return result;
+	}
 
     @PostMapping("/abrirProtocolo")
     public Protocolo abrirProtocolo(@RequestBody ProtocoloDTO protocoloDTO) {

@@ -1,7 +1,5 @@
 package com.bradesco.sistemabradesco.models;
 
-import java.time.LocalDate;
-
 import org.springframework.beans.BeanUtils;
 
 import com.bradesco.sistemabradesco.dto.TipoProtocoloDTO;
@@ -19,13 +17,14 @@ public class TipoProtocolo {
   
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)//auto_incremento
+  @Column(name= "codigo")
   private int codigo;
 
   @Column(name = "tipo", length = 20, nullable = false)
   private String tipo;
 
   @Column(name = "prazo_tratativa")
-  private LocalDate prazoTratativa;
+  private int prazoTratativa;
 
   @Column(name = "dias_uteis", nullable = false)
   private boolean diasUteis;
@@ -56,11 +55,11 @@ public class TipoProtocolo {
     this.tipo = tipo;
   }
 
-  public LocalDate getPrazoTratativa() {
+  public int getPrazoTratativa() {
     return prazoTratativa;
   }
 
-  public void setPrazoTratativa(LocalDate prazoTratativa) {
+  public void setPrazoTratativa(int prazoTratativa) {
     this.prazoTratativa = prazoTratativa;
   }
 
